@@ -63,7 +63,7 @@ In this analysis the user is required to select location of interest (Israel in 
 ### Lineage Agnostic
 
 In this analysis the user is also required to specify a lineage of interest.
-![plot](./src/without_lineage.jpg)
+![plot](./src/wit_lineage.jpg)
 
 Here, the pvalues represent:
 - *p-val with mut* indicate the significance of the growth of the number of sequences of the given lineage WITH the mutation in the selected location with respect to the growth of ALL the sequences (any lineage) in the location;
