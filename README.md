@@ -29,7 +29,7 @@ How to start VariantHunter:
 
 5) Wait until the process finishes to insert all the data in the database (big .tsv files ~5GB could require a few hours).
 
-6) When the log on the terminal shows the message `* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)`, the database has been loaded and the application can be opened in a browser using the following URL: http://localhost:5000/viruclust/.
+6) When the log on the terminal shows the message `* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)`, the database has been loaded and the application can be opened in a browser using the following URL: http://localhost:5000/variant_hunter/.
 
 The process can be stopped with CTRL+C; it can be restarted using the same or a new .tsv file, requiring to rerun the whole upload.
 
