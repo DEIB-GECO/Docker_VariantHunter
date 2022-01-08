@@ -12,4 +12,4 @@ VariantHunter analyzes the frequencies of SARS-CoV-2 aminoacid mutations to spot
 
 ### Lineage agnostic modality
 
-### Aineage aware modality
+### Lineage aware modality
