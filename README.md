@@ -39,7 +39,7 @@ VariantHunter analyzes the frequencies of aminoacid mutations of SARS-CoV-2 in o
 
 VariantHunter supports two types of analyses: *Lineage Agnostic* and *Lineage Aware*.
 
-The underlying mechanism of both the metodology is the same: each AA mutation is analyzed for a time period of 4 weeks. For each week the frequency of the mutation (computed as "number of sequencing harboring the mutations"/"total number of sequences") is considered (the four blue dots in the above figure); then, a linear model is fitted on the four data points (red line in the figure). The slope of the regression line represent *how fast* the mutations is growing (i.e., its percentage is increasing). Positive slopes indicate and increasing trend, while negative values of the slope indicates a decreasing trend.
+The underlying mechanism of both the metodology is the same: each AA mutation is analyzed for a time period of 4 weeks. For each week the frequency of the mutation (computed as "number of sequencing harboring the mutations"/"total number of sequences") is considered (the four blue dots in the below figure); then, a linear model is fitted on the four data points (red line in the figure). The slope of the regression line represent *how fast* the mutations is growing (i.e., its percentage is increasing). Positive slopes indicate and increasing trend, while negative values of the slope indicates a decreasing trend.
 
 ![plot](./src/line.jpg)
 
@@ -49,3 +49,23 @@ The main results of both analysis is a table listing relevant mutations; further
 
 ### Lineage Agnostic
 
+In this analysis the user is required to select location of interest (Israel in the example below) and the period of interest (first week of january 2022 in the example). The tool analyzes the data of the selected week and of the three previous weeks. The next figure shows the typical results of the analyses.
+![plot](./src/without_lineage.jpg)
+
+- each line corresponds to a mutations of interest;
+- the *slope* represents how fast the frequency of the mutation increased in the selected period;
+- the *presence...* columns report the frequency of the mutation in the each of the four week;
+- *p-val with mut* indicate the significance of the growth of the number of sequences WITH the mutation in the selected location with respect to the growth of ALL the sequences in the location;
+- *p-val without mut* indicate the significance of the growth of the number of sequences WITHOUT the mutation in the selected location with respect to the growth of ALL the sequences in the selected location;
+- *p-val comparative* indicate the significance of the growth of the number of sequences WITH the mutation in the selected location with respect to the growth of sequences WITHOUT the mutation in the selected location;
+
+
+### Lineage Agnostic
+
+In this analysis the user is also required to specify a lineage of interest.
+![plot](./src/without_lineage.jpg)
+
+Here, the pvalues represent:
+- *p-val with mut* indicate the significance of the growth of the number of sequences of the given lineage WITH the mutation in the selected location with respect to the growth of ALL the sequences (any lineage) in the location;
+- *p-val without mut* indicate the significance of the growth of the number of sequences of the given lineage WITHOUT the mutation in the selected location with respect to the growth of ALL the sequences (any lineage) in the selected location;
+- *p-val comparative* indicate the significance of the growth of the number of sequences of the given lineage WITH the mutation in the selected location with respect to the growth of sequences of the given lineage WITHOUT the mutation in the selected location;
