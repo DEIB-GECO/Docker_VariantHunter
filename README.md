@@ -39,7 +39,13 @@ VariantHunter analyzes the frequencies of aminoacid mutations of SARS-CoV-2 in o
 
 VariantHunter supports two types of analyses: *Lineage Agnostic* and *Lineage Aware*.
 
-The underline mechanism of both the metodology is the same: each AA mutation is analyzed for a time period of 4 weeks. For each week the frequency of the mutation (computed as "number of sequencing harboring the mutations"/"total number of sequences"); 
+The underlying mechanism of both the metodology is the same: each AA mutation is analyzed for a time period of 4 weeks. For each week the frequency of the mutation (computed as "number of sequencing harboring the mutations"/"total number of sequences") is considered (the four blue dots in the above figure); then, a linear model is fitted on the four data points (red line in the figure). The slope of the regression line represent *how fast* the mutations is growing (i.e., its percentage is increasing). Positive slopes indicate and increasing trend, while negative values of the slope indicates a decreasing trend.
 
 ![plot](./src/line.jpg)
+
+Finally, *chi squared* tests are computed to test the significance of the change of frequency of the mutation.
+
+The main results of both analysis is a table listing relevant mutations; further details are provided below.
+
+### Lineage Agnostic
 
