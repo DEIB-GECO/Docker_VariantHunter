@@ -41,5 +41,5 @@ VariantHunter supports two types of analyses: *Lineage Agnostic* and *Lineage Aw
 
 The underline mechanism of both the metodology is the same: each AA mutation is analyzed for a time period of 4 weeks. For each week the frequency of the mutation (computed as "number of sequencing harboring the mutations"/"total number of sequences"); 
 
-![plot](./src/line.png)
+![plot](./src/line.jpg)
 
