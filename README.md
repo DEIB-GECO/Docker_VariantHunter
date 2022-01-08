@@ -35,4 +35,10 @@ The process can be stopped with CTRL+C; it can be restarted using the same or a 
 
 
 ## Analyses
-VariantHunter supports two types of analyses: *Lineage agnostic* and *Lineage Aware*.
+VariantHunter analyzes the frequencies of aminoacid mutations of SARS-CoV-2 in order to spot novel emerging variants.
+
+VariantHunter supports two types of analyses: *Lineage Agnostic* and *Lineage Aware*.
+
+The underline mechanism of both the metodology is the same: each AA mutation is analyzed for a time period of 4 weeks. For each week the frequency of the mutation (computed as "number of sequencing harboring the mutations"/"total number of sequences"); 
+
+
