@@ -1,7 +1,7 @@
 services:
   appVariantHunter:
     image: lucacilibrasi/varianthunter
-    command: python -u ./backend/app.py ${FILE_NAME} ${LOCATION} ${DATE}
+    command: python -u ./backend/app.py ${FILE_NAME} '${LOCATION}' ${DATE}
     ports:
       - "5000:5000"
     volumes:
