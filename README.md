@@ -24,7 +24,7 @@ How to start VariantHunter:
 
   - FILE_PATH is the path of the directory that contains the .tsv previously downloaded from GISAID.
   - FILE_NAME is the name of the .tsv file.
-  - LOCATION is a name of a place used to filter the .tsv file. The database will contain only sequences from the selected location (e.g. 'Italy'). To apply no filter fill this field with 'world'.
+  - LOCATION is a name of a place used to filter the .tsv file. The database will contain only sequences from the selected location (e.g. 'Italy'). If locations with spaces are used, the string must be enclosed in quotes (e.g., LOCATION='South Africa'). To apply no filter, fill this field with 'world'.
   - DATE is a starting date used to filter the .tsv (e.g. '2021-01-01'). The database will contain only sequences with 'collection_date' > date.
 
 5) Wait until the process finishes to insert all the data in the database (big .tsv files ~5GB could require a few hours).
