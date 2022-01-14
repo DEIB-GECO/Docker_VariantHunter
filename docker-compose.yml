@@ -22,3 +22,5 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=pass
     ports:
       - 27017:27017
+    logging:
+      driver: "none"
