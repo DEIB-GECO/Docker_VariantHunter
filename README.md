@@ -35,37 +35,36 @@ The process can be stopped with CTRL+C; it can be restarted using the same or a 
 
 
 ## Analyses
-VariantHunter analyzes the frequencies of aminoacid mutations of SARS-CoV-2 in order to spot novel emerging variants.
+VariantHunter analyzes the frequencies of amino acid mutations of SARS-CoV-2 in order to spot novel emerging variants.
 
-VariantHunter supports two types of analyses: *Lineage Agnostic* and *Lineage Aware*.
+VariantHunter supports two types of analysis: *Lineage Agnostic* and *Lineage Aware*.
 
-The underlying mechanism of both the metodology is the same: each AA mutation is analyzed for a time period of 4 weeks. For each week the frequency of the mutation (computed as "number of sequencing harboring the mutations"/"total number of sequences") is considered (the four blue dots in the below figure); then, a linear model is fitted on the four data points (red line in the figure). The slope of the regression line represent *how fast* the mutations is growing (i.e., its percentage is increasing). Positive slopes indicate and increasing trend, while negative values of the slope indicates a decreasing trend.
+The underlying mechanism of both metodologies is the same: each AA mutation is analyzed for a time period of 2, 3, or 4 weeks (default value). For each week, the frequency of the mutation (computed as "number of sequencing harboring the mutations"/"total number of sequences") is considered (see the four blue dots in the below figure); then, a linear model is fitted on the four data points (red line in the figure). The slope of the regression line represents *how fast* the mutation is growing (i.e., its percentage is increasing). Positive slopes indicate an increasing trend, while negative values of the slope indicate a decreasing trend.
 
 ![plot](./src/line.jpg)
 
 Finally, *chi squared* tests are computed to test the significance of the change of frequency of the mutation.
 
-The main results of both analysis is a table listing relevant mutations; further details are provided below.
+The main results of both analysis are summarized in a table listing relevant mutations; further details are provided below.
 
 ### Lineage Agnostic
 
-In this analysis the user is required to select location of interest (Israel in the example below) and the period of interest (first week of january 2022 in the example). The tool analyzes the data of the selected week and of the three previous weeks. The next figure shows the typical results of the analyses.
+In this analysis, the user is required to select a location of interest (Israel in the example below) and a period of interest (first week of January 2022 in the example). The tool analyzes the data of the selected week and of the three (or 1/2) previous weeks. The next figure shows a typical result of the analysis.
 ![plot](./src/without_lineage.jpg)
 
-- each line corresponds to a mutations of interest;
+- each line corresponds to a mutation of interest;
 - the *slope* represents how fast the frequency of the mutation increased in the selected period;
-- the *presence...* columns report the frequency of the mutation in the each of the four week;
-- *p-val with mut* indicate the significance of the growth of the number of sequences WITH the mutation in the selected location with respect to the growth of ALL the sequences in the location;
-- *p-val without mut* indicate the significance of the growth of the number of sequences WITHOUT the mutation in the selected location with respect to the growth of ALL the sequences in the selected location;
-- *p-val comparative* indicate the significance of the growth of the number of sequences WITH the mutation in the selected location with respect to the growth of sequences WITHOUT the mutation in the selected location;
-
+- the *Presence...* columns report the frequency of the mutation in each of the four (two or three) weeks;
+- *P-value with mut* indicate the significance of the growth of the number of sequences WITH the mutation in the selected location, with respect to the growth of ALL the sequences in the location;
+- *P-value without mut* indicate the significance of the growth of the number of sequences WITHOUT the mutation in the selected location, with respect to the growth of ALL the sequences in the selected location;
+- *P-value comparative* indicate the significance of the growth of the number of sequences WITH the mutation in the selected location with respect to the growth of sequences WITHOUT the mutation in the selected location.
 
 ### Lineage Aware
 
-In this analysis the user is also required to specify a lineage of interest.
+In this analysis the user is required, in addition, to specify a lineage of interest.
 ![plot](./src/with_lineage.jpg)
 
 Here, the pvalues represent:
-- *p-val with mut* indicate the significance of the growth of the number of sequences of the given lineage WITH the mutation in the selected location with respect to the growth of ALL the sequences (any lineage) in the location;
-- *p-val without mut* indicate the significance of the growth of the number of sequences of the given lineage WITHOUT the mutation in the selected location with respect to the growth of ALL the sequences (any lineage) in the selected location;
-- *p-val comparative* indicate the significance of the growth of the number of sequences of the given lineage WITH the mutation in the selected location with respect to the growth of sequences of the given lineage WITHOUT the mutation in the selected location;
+- *P-value with mut* indicate the significance of the growth of the number of sequences of the given lineage WITH the mutation in the selected location with respect to the growth of ALL the sequences (any lineage) in the location;
+- *P-value without mut* indicate the significance of the growth of the number of sequences of the given lineage WITHOUT the mutation in the selected location with respect to the growth of ALL the sequences (any lineage) in the selected location;
+- *P-value comparative* indicate the significance of the growth of the number of sequences of the given lineage WITH the mutation in the selected location with respect to the growth of sequences of the given lineage WITHOUT the mutation in the selected location.
