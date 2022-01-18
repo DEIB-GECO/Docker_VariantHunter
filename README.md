@@ -60,7 +60,7 @@ In this analysis the user is required to select location of interest (Israel in 
 - *p-val comparative* indicate the significance of the growth of the number of sequences WITH the mutation in the selected location with respect to the growth of sequences WITHOUT the mutation in the selected location;
 
 
-### Lineage Agnostic
+### Lineage Aware
 
 In this analysis the user is also required to specify a lineage of interest.
 ![plot](./src/with_lineage.jpg)
